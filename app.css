@@ -1,0 +1,108 @@
+* {
+  text-decoration: none;
+  box-sizing: border-box;
+  }
+
+
+
+  html {
+      max-width:100%;
+    }   
+    
+
+    body {
+        margin: 0;
+        background: #D1D17D;
+        font-family: sans-serif;
+        max-width:100%;   
+        overflow-x: hidden;
+      }
+
+      li {
+        list-style: none;
+      }
+      
+      header {
+        text-align: center;
+        color: #005B4A;
+        border-bottom: 5px solid #59A183 ;
+      }
+      
+      .content {
+        padding: 30px;
+        width: 80%;
+        margin: 0 auto;
+      }
+      
+      .search-field {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      
+      .search-field input {
+        padding: 15px;
+        width: 40%;
+        outline: 2px solid #59A183;
+        border: none;
+        margin-right: 8px;
+        border-radius: 5px;
+        font-size: 15px;
+      }
+      
+      .search-field button {
+        font-size: 15px;
+        padding: 15px;
+        width: 12%;
+        background-color: #8FBB7E;
+        border: 1px solid #59A183;
+        color: #F5F3CB;
+        cursor: pointer;
+        border-radius: 2px;
+      }
+
+      .search-field button:hover {
+        color: #005B4A;
+        background-color: #59A183;
+      }
+
+      .search-field button:active {
+        color: #F5F3CB;
+        background-color: #8FBB7E;
+      }
+
+      #movieYear {
+        text-align: center;
+        color: #005B4A;
+      }
+
+      #movieInfo {
+        text-align: center;
+      }
+
+      .movie-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        border: 2px solid #59A183;
+        background-color: #005B4A;
+        opacity: 0.9;
+        width: 55%;
+      }
+
+      .movie-info h2 {
+        text-align: center;
+        color: #F5F3CB;
+        font-size: 25px;
+      }
+
+      .movie-info li {
+        text-align: left;
+        color: #F5F3CB;
+        font-size: 18px;
+        line-height: 30px;
+        border-left: 5px solid #8FBB7E;;
+        padding-left: 10px;
+      }
+
+  
