@@ -94,6 +94,7 @@
         text-align: center;
         color: #F5F3CB;
         font-size: 25px;
+        margin-right: 10px;
       }
 
       .movie-info li {
@@ -103,6 +104,7 @@
         line-height: 30px;
         border-left: 5px solid #8FBB7E;;
         padding-left: 10px;
+        padding-right: 40px;
       }
 
   
