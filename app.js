@@ -36,6 +36,8 @@ const displayMovieName = (movieData) => {
   } else {
     movieNameDiv.innerHTML = "Film tidak ditemukan! Coba lagi.";
     movieNameDiv.style.color = "red"
+    movieNameDiv.style.textAlign = "center"
+
   }
 };
 
@@ -50,19 +52,21 @@ const displayTargetMovie = (movieData) => {
       name: movieData.d[0].l || '-',
       category: movieData.d[0].qid || '-',
       rank: movieData.d[0].rank || '-',
-      cast: movieData.d[0].s || '-'
-    } 
-    
+      cast: movieData.d[0].s || '-',
+      year : movieData.d[0].y || '-'
+    };
+
     const element = `
       <div class="movie-container">
         <img style="width: 300px;" src="${targetMovie.image}" class="movie-image">
         <div class="movie-info">
           <h2>Detail Film</h2>
           <ul>
-            <li>Title: ${targetMovie.name}</li>
-            <li>Category: ${targetMovie.category}</li>
-            <li>Actors: ${targetMovie.cast}</li>
-            <li>Rank: ${targetMovie.rank}</li>
+            <li>Judul : ${targetMovie.name}</li>
+            <li>Kategori: ${targetMovie.category}</li>
+            <li>Pemeran: ${targetMovie.cast}</li>
+            <li>Ranking: ${targetMovie.rank}</li>
+            <li>Tahun: ${targetMovie.year}</li>
           </ul>
         </div>
       </div>
@@ -70,7 +74,7 @@ const displayTargetMovie = (movieData) => {
     targetMovieDIv.innerHTML = element;
   } else {
     targetMovieDIv.innerHTML = '';
-  };
+  }
 };
 
 
@@ -83,10 +87,12 @@ let displayTargetMovies = (movieData) => {
     const movie = movieData.d[c];
     if (movie && movie.i) {
       const TargetMovies = {
-        image: movie.i.imageUrl || '', // Menyertakan nilai default jika 'imageUrl' tidak ada
-        name: movie.l || '-',
-        category: movie.qid || '-',
-        rank: movie.rank || '-',
+        image: movieData.d[c].i.imageUrl || '', // Menyertakan nilai default jika 'imageUrl' tidak ada
+        name: movieData.d[c].l || '-',
+        category: movieData.d[c].qid || '-',
+        rank: movieData.d[c].rank || '-',
+        cast: movieData.d[c].s || '-',
+        year : movieData.d[c].y || '-'
       };
 
       moviesDiv.insertAdjacentHTML('beforeend', `
@@ -95,9 +101,11 @@ let displayTargetMovies = (movieData) => {
           <div class="movieInfo">
             <h2>Detail Film</h2>
             <ul>
-              <li>Judul: ${TargetMovies.name}</li>
-              <li>Kategori: ${TargetMovies.category}</li>
-              <li>Peringkat: ${TargetMovies.rank}</li>
+            <li>Judul : ${TargetMovies.name}</li>
+            <li>Kategori: ${TargetMovies.category}</li>
+            <li>Pemeran: ${TargetMovies.cast}</li>
+            <li>Ranking: ${TargetMovies.rank}</li>
+            <li>Tahun: ${TargetMovies.year}</li>
             </ul>
           </div>
         </div>
@@ -105,6 +113,10 @@ let displayTargetMovies = (movieData) => {
     }
   }
 };
+
+
+  
+
 //fungsi button
 const searchMovie = async () => {
   // Argument ini akan digantikan dengan kata dari formulir search
@@ -117,6 +129,7 @@ const searchMovie = async () => {
   displayTargetMovie(movieData);
   displayTargetMovies(movieData);
   };
+
 };
 
 
