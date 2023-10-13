@@ -34,7 +34,7 @@ const displayMovieName = (movieData) => {
     movieNameDiv.style.color = "#005B4A"
 
   } else {
-    movieNameDiv.innerHTML = "Film tidak ditemukan!, coba lagi.";
+    movieNameDiv.innerHTML = "Film tidak ditemukan! Coba lagi.";
     movieNameDiv.style.color = "red"
   }
 };
@@ -51,7 +51,9 @@ const displayTargetMovie = (movieData) => {
       category: movieData.d[0].qid || '-',
       rank: movieData.d[0].rank || '-',
       cast: movieData.d[0].s || '-'
-    };
+    } else {
+    targetMovieDIv.innerHTML = '';
+  };
 
     const element = `
       <div class="movie-container">
