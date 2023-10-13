@@ -51,10 +51,8 @@ const displayTargetMovie = (movieData) => {
       category: movieData.d[0].qid || '-',
       rank: movieData.d[0].rank || '-',
       cast: movieData.d[0].s || '-'
-  } else {
-    targetMovieDIv.innerHTML = '';
-  };
-
+    } 
+    
     const element = `
       <div class="movie-container">
         <img style="width: 300px;" src="${targetMovie.image}" class="movie-image">
@@ -70,7 +68,9 @@ const displayTargetMovie = (movieData) => {
       </div>
     `;
     targetMovieDIv.innerHTML = element;
-  } 
+  } else {
+    targetMovieDIv.innerHTML = '';
+  };
 };
 
 
